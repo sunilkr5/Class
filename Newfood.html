@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canteen Billing System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .item-name {
+      flex: 1;
+    }
+
+    .item-price {
+      flex: 0 0 100px;
+    }
+
+    input[type="number"] {
+      width: 70px;
+      padding: 6px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 18px;
+      background-color: #ff7e5f;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #eb674a;
+    }
+
+    #total {
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Welcome to Mevi Canteen</h2>
+  <h3>Here is our Menu</h3>
+
+  <div class="item-row"><span class="item-name">Idli</span> <span class="item-price">Rs. 20</span> <input type="number" min="0" id="Idli" value="0"></div>
+  <div class="item-row"><span class="item-name">Pulav</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Pulav" value="0"></div>
+  <div class="item-row"><span class="item-name">Poori</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Poori" value="0"></div>
+  <div class="item-row"><span class="item-name">Dosa</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Dosa" value="0"></div>
+  <div class="item-row"><span class="item-name">Coffee</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Cofee" value="0"></div>
+  <div class="item-row"><span class="item-name">Tea</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Tea" value="0"></div>
+  
+  <button onclick="Bill()">Bill</button>
+  <p id="total">Total Bill Will be</p>
+</div>
+
+<script>
+function Bill(){
+    var Idli = parseInt(document.getElementById("Idli").value) * 20;
+    var Pulav = parseInt(document.getElementById("Pulav").value) * 40;
+    var Poori = parseInt(document.getElementById("Poori").value) * 40;
+    var Dosa = parseInt(document.getElementById("Dosa").value) * 40;
+    var Cofee = parseInt(document.getElementById("Cofee").value) * 40;
+    var Tea = parseInt(document.getElementById("Tea").value) * 40;
+
+    var total = Idli + Pulav + Poori + Dosa + Cofee + Tea;
+
+    document.getElementById("total").innerHTML = "The total Bill is Rs. " + total;
+}
+</script>
+
+</body>
+</html>

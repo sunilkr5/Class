@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteen Billing System</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome to Mevi Canteen</h2>
+    <h3>Here is our Menu</h3>
+
+    <label for="">Idli : Rs.20 <input type="number" min="0"id="Idli" value="0"></label>
+    <label for="">Pulav : Rs.40 <input type="number" min="0"id="Pulav" value="0"></label>
+    <label for="">Poori : Rs.40 <input type="number" min="0"id="Poori" value="0"></label>
+    <label for="">Dosa : Rs.40 <input type="number" min="0"id="Dosa" value="0"></label>
+    <label for="">Cofee : Rs.40 <input type="number" min="0"id="Cofee" value="0"></label>
+    <label for="">Tea : Rs.40 <input type="number" min="0"id="Tea" value="0"></label>
+    
+    
+    <button onclick="Bill()"> Bill </button>
+    <p id="total">Total Bill Will be</p>
+
+    
+
+</div>
+
+<script>
+function Bill(){
+    var Idli =parseInt(document.getElementById("Idli").value)*20;
+    var Pulav =parseInt(document.getElementById("Pulav").value)*40;
+    var Poori =parseInt(document.getElementById("Poori").value)*40;
+    var Dosa =parseInt(document.getElementById("Dosa").value)*40;
+    var Cofee =parseInt(document.getElementById("Cofee").value)*40;
+    var Tea =parseInt(document.getElementById("Tea").value)*40;
+
+    var total = Idli + Pulav + Poori + Dosa + Cofee + Tea;
+
+    var Bill = document.getElementById("total");
+    Bill.innerHTML="The total Bill is"+""+total;
+}
+
+</script>   
+</body>
+</html>

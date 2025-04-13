@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Prediction Sheet</title>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Result Prediction Sheet</h1>
+    <hr> 
+    <label for="name">Student name:</label>
+   <input type="text" id="name" placeholder="Enter your name" required>
+    <button onclick="predictResult()">Predict Result</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function predictResult(){
+        var name1 = document.getElementById("name").value;
+        var resultPredict = Math.random() * 100;
+        resultPredict = Math.floor(resultPredict) + 1;
+
+        var result = document.getElementById("result");
+        result.innerHTML = "Your result is: " + resultPredict + "%";                 
+    }
+    const resultPredict = Math.floor(Math.random() * 100+1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canteen Billing System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url(food.jpg) no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .outer-box {
+      padding: 40px;
+      border-radius: 25px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 450px;
+      width: 100%;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 12px 0;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .item-name {
+      flex: 1;
+    }
+
+    .item-price {
+      flex: 0 0 100px;
+    }
+
+    input[type="number"] {
+      width: 70px;
+      padding: 6px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      background: rgba(255,255,255,0.6);
+      color: #000;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 18px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+
+    #total {
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="outer-box">
+  <div class="container">
+    <h2>Welcome to Mevi Canteen</h2>
+    <h3>Here is our Menu</h3>
+
+    <div class="item-row"><span class="item-name">Idli</span> <span class="item-price">Rs. 20</span> <input type="number" min="0" id="Idli" value="0"></div>
+    <div class="item-row"><span class="item-name">Pulav</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Pulav" value="0"></div>
+    <div class="item-row"><span class="item-name">Poori</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Poori" value="0"></div>
+    <div class="item-row"><span class="item-name">Dosa</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Dosa" value="0"></div>
+    <div class="item-row"><span class="item-name">Coffee</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Cofee" value="0"></div>
+    <div class="item-row"><span class="item-name">Tea</span> <span class="item-price">Rs. 40</span> <input type="number" min="0" id="Tea" value="0"></div>
+    
+    <button onclick="Bill()">Bill</button>
+    <p id="total">Total Bill Will be</p>
+  </div>
+</div>
+
+<script>
+function Bill(){
+    var Idli = parseInt(document.getElementById("Idli").value) * 20;
+    var Pulav = parseInt(document.getElementById("Pulav").value) * 40;
+    var Poori = parseInt(document.getElementById("Poori").value) * 40;
+    var Dosa = parseInt(document.getElementById("Dosa").value) * 40;
+    var Cofee = parseInt(document.getElementById("Cofee").value) * 40;
+    var Tea = parseInt(document.getElementById("Tea").value) * 40;
+
+    var total = Idli + Pulav + Poori + Dosa + Cofee + Tea;
+
+    document.getElementById("total").innerHTML = "The total Bill is Rs. " + total;
+}
+</script>
+
+</body>
+</html>

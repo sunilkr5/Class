@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Prediction Sheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 400px;
+      margin: 80px auto;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Result Prediction Sheet</h1>
+    <hr> 
+    <label for="name">Student name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+    <button onclick="predictResult()">Predict Result</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function predictResult() {
+        const name = document.getElementById("name").value.trim();
+        const marks = Math.floor(Math.random() * 100) + 1;
+
+        let resultClass = "";
+
+        if (marks >= 75) {
+            resultClass = "Distinction 🥇";
+        } else if (marks >= 60) {
+            resultClass = "First Class 🥈";
+        } else if (marks >= 50) {
+            resultClass = "Second Class 🥉";
+        } else if (marks >= 35) {
+            resultClass = "Just Pass ✅";
+        } else {
+            resultClass = "Fail ❌";
+        }
+
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `
+          Student Name: <strong>${name}</strong><br>
+          Marks Obtained: <strong>${marks}</strong><br>
+          Result: <strong>${resultClass}</strong>
+        `;
+    }
+  </script>
+</body>
+</html>

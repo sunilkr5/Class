@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Your Name" id="Name">
+    <input type="text" name ="" id="Name" placeholder="PartnerName">
+    <button onclick="caluculateLove()">Caluculate Love % </button>
+    <p id="result">You will get the result  here </p>
+
+    <script>
+
+        function caluculateLove() {  
+     var Name = document.getElementById("Name").value;
+     var PartnerName = document.getElementById("Name").value;
+     var result = document.getElementById("result");
+
+     if (name1 === "" || name2 === "") {
+        document.getElementById("result").innerText = "Please enter both names!";
+        return;
+      }
+      const lovePercent = Math.floor(Math.random() * 100);  
+        // const loveScore = Math.floor(Math.random()*100);
+      result.innerHTML = '${name1}❤${name2} = ${Love Score}% Love Match!';
+
+        }
+
+    </script>
+       
+</body>
+</html>

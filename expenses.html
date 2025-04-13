@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Monthly Expense Chart</h2>
+    <canvas id="expenseChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('expenseChart').getContext('2d');
+    const expenseChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Rent', 'Groceries', 'Transport', 'Utilities', 'Entertainment', 'Others'],
+        datasets: [{
+          label: 'Expenses (in USD)',
+          data: [1200, 400, 150, 200, 100, 80],
+          backgroundColor: [
+            '#007bff',
+            '#28a745',
+            '#ffc107',
+            '#dc3545',
+            '#6610f2',
+            '#17a2b8'
+          ],
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Amount ($)'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: false
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
