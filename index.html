@@ -6,11 +6,61 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+
+     body{
+    background-image: url(sunil.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 500px; */
+    height: 100vh;
+
+     } 
+
+     input{
+        display: block;
+        padding: 30px;
+        width: 450px;
+        margin: 10px 0;
+        border: 1px solid white;
+        border-radius: 10px;
+        font-size: 18px;
+     }
+
+     button{
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 20px;
+     }
+
+     #result{
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 20px;
+      color: blueviolet;  
+     }
+     .container{
+        background-color: aquamarine;
+        padding: 30px 40px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 30px;
+        
+     }
+    </style>
+    <div class="container">
     <input type="text" placeholder="Enter Your Name" id="Name">
     <input type="Number" name ="" id="age" placeholder="Enter Your age">
     <input type="text" name="" id="Country" placeholder="Enter Your Nation in CAPS">
     <button onclick="vote()">submit</button>
     <p id="result">You will get the result  here </p>
+    </div>
 
     <script>
 
